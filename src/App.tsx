@@ -1,20 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Characters from "components/Characters";
-// import Navbar from "./components/Navbar";
 
 import CardDetails from "components/CardDetails";
 import Api from "api";
 import { Character, Info } from "types";
 import { BASE_CHARACTER_URL } from "utils";
+import Navbar from "components/Navbar";
 
 function App() {
   return (
     <Router>
-      <div className="App">{/* <Navbar /> */}</div>
+      <div className="App"><Navbar /></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/character/:id" element={<CardDetails />} />
@@ -54,7 +54,6 @@ const Home = () => {
           <div className="col-lg-8 col-12 justify-content-center">
             <div className="row">
               {characters.length > 0 ? <Characters page="/character/" results={characters} /> : <span>No characters found</span>}
-              
             </div>
             <button onClick={handleLoadMore}>Load More</button>
           </div>
