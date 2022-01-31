@@ -5,7 +5,6 @@ import { Character, Location } from "types";
 import { STATUSES } from "utils";
 
 
-
 const CardDetails = () => {
   let { id } = useParams();
 

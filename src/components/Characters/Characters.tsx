@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
-import CardDetails from "components/CardDetails";
 import { Character } from "types";
 import { CharacterStatus } from "components/CardDetails/CardDetails";
 
-type CardProps = {
+type CharactersProps = {
     page: string
     results: Character[]
 }
 
-const Card = ({ page, results }: CardProps) => {
+const Characters = ({ page, results }: CharactersProps) => {
     let display;
 
     if (results) {
@@ -48,4 +47,4 @@ const Card = ({ page, results }: CardProps) => {
   return <>{display}</>;
 };
 
-export default Card;
+export default Characters;

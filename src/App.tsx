@@ -3,12 +3,13 @@ import "bootstrap/dist/js/bootstrap";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Card from "components/Card";
+import Characters from "components/Characters";
 // import Navbar from "./components/Navbar";
 
 import CardDetails from "components/CardDetails";
 import Api from "api";
-import { Character } from "types";
+import { Character, Info } from "types";
+import { BASE_CHARACTER_URL } from "utils";
 
 function App() {
   return (
@@ -22,20 +23,30 @@ function App() {
   );
 }
 
+interface PageProps extends Info{
+  currentUrl: string;
+}
+
 const Home = () => {
-  let [pageNumber, updatePageNumber] = useState(1);
   let [characters, setCharacters] = useState<Character[]>([]);
-  let [info, setInfo] = useState<{}>();
+  let [info, setInfo] = useState<Info>();
+  const [page, setPage] = useState<string | undefined>(BASE_CHARACTER_URL);
+
 
   useEffect(() => {
+
     (async function () {
-      let data = await Api().getCharacters();
+      let data = await Api().getCharacters(page);
       const { info, results } = data;
-      setCharacters(results)
+      setCharacters(prevState => [...prevState, ...results])
       setInfo(info)
     })();
-  }, []);
-  
+  }, [page]);
+
+  function handleLoadMore(){
+   setPage(info?.next)
+  }
+
   return (
     <div className="App">
       <h1 className="text-center mb-3">Characters</h1>
@@ -44,8 +55,9 @@ const Home = () => {
         <div className="row">
           <div className="col-lg-8 col-12 justify-content-center">
             <div className="row">
-              <Card page="/character/" results={characters} />
+              <Characters page="/character/" results={characters} />
             </div>
+            <button onClick={handleLoadMore}>Load More</button>
           </div>
         </div>
       </div>

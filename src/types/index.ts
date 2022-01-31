@@ -31,11 +31,13 @@ export interface Episode {
 }
 
 export interface CharacterResponse {
-  info: {
-    count: string;
-    pages: number;
-    next: string;
-    prev: null;
-  };
+  info: Info;
   results: Character[];
+}
+
+export type Info = {
+  count: number;
+  pages: number;
+  next: string;
+  prev: string | null;
 }

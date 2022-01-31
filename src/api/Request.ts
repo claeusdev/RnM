@@ -1,7 +1,8 @@
 import { Character, CharacterResponse } from "types";
+import { BASE_CHARACTER_URL, BASE_URL } from "utils";
 
 const Api = () => {
-  const BASE_URL = `https://rickandmortyapi.com/api`;
+  
   return {
 
     getSingleCharacter: async (id: string): Promise<Character> => {
@@ -13,8 +14,9 @@ const Api = () => {
      * Method to get all characters from Api
      * @returns Promise
      */
-    getCharacters: async (): Promise<CharacterResponse> => {
-      const response = await fetch(`${BASE_URL}/character`);
+    getCharacters: async (url: string = BASE_CHARACTER_URL): Promise<CharacterResponse> => {
+      console.log("RES", url)
+      const response = await fetch(url);
       const data = response.json();
       return data
     },
