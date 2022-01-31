@@ -31,8 +31,6 @@ const Home = () => {
   let [characters, setCharacters] = useState<Character[]>([]);
   let [info, setInfo] = useState<Info>();
   const [page, setPage] = useState<string | undefined>(BASE_CHARACTER_URL);
-
-
   useEffect(() => {
 
     (async function () {
@@ -55,7 +53,8 @@ const Home = () => {
         <div className="row">
           <div className="col-lg-8 col-12 justify-content-center">
             <div className="row">
-              <Characters page="/character/" results={characters} />
+              {characters.length > 0 ? <Characters page="/character/" results={characters} /> : <span>No characters found</span>}
+              
             </div>
             <button onClick={handleLoadMore}>Load More</button>
           </div>
