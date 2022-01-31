@@ -1,54 +1,79 @@
+import Api from "api";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { Character } from "types";
 
 const CardDetails = () => {
   let { id } = useParams();
 
-  let [fetchedData, updateFetchedData] = useState([]);
-  let { name, location, origin, gender, image, status, species } = fetchedData;
-
-  let api = `https://rickandmortyapi.com/api/character/${id}`;
+  let [character, setCharacter] = useState<Character>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     (async function () {
-      let data = await fetch(api).then((res) => res.json());
-      updateFetchedData(data);
+      setLoading(true);
+      if (id) {
+        let data = await Api().getSingleCharacter(id);
+        setCharacter(data);
+      } else {
+        setLoading(true);
+      }
+      setLoading(false)
     })();
-  }, [api]);
+  }, [id]);
 
   return (
     <div className="container d-flex justify-content-center mb-5">
       <div className="d-flex flex-column gap-3">
-        <h1 className="text-center">{name}</h1>
+        <Link to="/">Back to all characters</Link>
+        {loading ? (
+          <span>loading ...</span>
+        ) : (
+          <>
+            <h1 className="text-center">{character?.name}</h1>
 
-        <img className="img-fluid" src={image} alt="" />
-        {(() => {
-          if (status === "Dead") {
-            return <div className="badge bg-danger fs-5">{status}</div>;
-          } else if (status === "Alive") {
-            return <div className=" badge bg-success fs-5">{status}</div>;
-          } else {
-            return <div className="badge bg-secondary fs-5">{status}</div>;
-          }
-        })()}
-        <div className="content">
-          <div className="">
-            <span className="fw-bold">Gender : </span>
-            {gender}
-          </div>
-          <div className="">
-            <span className="fw-bold">Location: </span>
-            {location?.name}
-          </div>
-          <div className="">
-            <span className="fw-bold">Origin: </span>
-            {origin?.name}
-          </div>
-          <div className="">
-            <span className="fw-bold">Species: </span>
-            {species}
-          </div>
-        </div>
+            <img className="img-fluid" src={character?.image} alt="" />
+            {(() => {
+              if (character?.status === "Dead") {
+                return (
+                  <div className="badge bg-danger fs-5">
+                    {character?.status}
+                  </div>
+                );
+              } else if (character?.status === "Alive") {
+                return (
+                  <div className=" badge bg-success fs-5">
+                    {character?.status}
+                  </div>
+                );
+              } else {
+                return (
+                  <div className="badge bg-secondary fs-5">
+                    {character?.status}
+                  </div>
+                );
+              }
+            })()}
+            <div className="content">
+              <div className="">
+                <span className="fw-bold">Gender : </span>
+                {character?.gender}
+              </div>
+              <div className="">
+                <span className="fw-bold">Location: </span>
+                {character?.location?.name}
+              </div>
+              <div className="">
+                <span className="fw-bold">Origin: </span>
+                {character?.origin?.name}
+              </div>
+              <div className="">
+                <span className="fw-bold">Species: </span>
+                {character?.species}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

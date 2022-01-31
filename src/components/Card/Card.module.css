@@ -1,8 +1,12 @@
-$radius: 10px;
+:root {
+  --radius: 10px;
+}
+
+
 
 .card {
   border: 2px solid #0b5ed7;
-  border-radius: $radius;
+  border-radius: var(--radius);
 }
 
 .content {
@@ -10,7 +14,7 @@ $radius: 10px;
 }
 
 .img {
-  border-radius: $radius $radius 0 0;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .badge {
