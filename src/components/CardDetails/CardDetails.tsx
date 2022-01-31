@@ -1,7 +1,10 @@
 import Api from "api";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Character } from "types";
+import { Character, Location } from "types";
+import { STATUSES } from "utils";
+
+
 
 const CardDetails = () => {
   let { id } = useParams();
@@ -18,7 +21,7 @@ const CardDetails = () => {
       } else {
         setLoading(true);
       }
-      setLoading(false)
+      setLoading(false);
     })();
   }, [id]);
 
@@ -30,53 +33,76 @@ const CardDetails = () => {
           <span>loading ...</span>
         ) : (
           <>
-            <h1 className="text-center">{character?.name}</h1>
-
-            <img className="img-fluid" src={character?.image} alt="" />
-            {(() => {
-              if (character?.status === "Dead") {
-                return (
-                  <div className="badge bg-danger fs-5">
-                    {character?.status}
-                  </div>
-                );
-              } else if (character?.status === "Alive") {
-                return (
-                  <div className=" badge bg-success fs-5">
-                    {character?.status}
-                  </div>
-                );
-              } else {
-                return (
-                  <div className="badge bg-secondary fs-5">
-                    {character?.status}
-                  </div>
-                );
-              }
-            })()}
-            <div className="content">
-              <div className="">
-                <span className="fw-bold">Gender : </span>
-                {character?.gender}
-              </div>
-              <div className="">
-                <span className="fw-bold">Location: </span>
-                {character?.location?.name}
-              </div>
-              <div className="">
-                <span className="fw-bold">Origin: </span>
-                {character?.origin?.name}
-              </div>
-              <div className="">
-                <span className="fw-bold">Species: </span>
-                {character?.species}
-              </div>
-            </div>
+            {character && (
+              <CharacterDetails character={character} />
+            )}
           </>
         )}
       </div>
     </div>
   );
 };
+
+interface CharacterProps {
+  character: Character
+}
+
+function CharacterDetails({ character }: CharacterProps) {
+  return (
+    <>
+      <h1 className="text-center">{character.name}</h1>
+      <img className="img-fluid" src={character.image} alt="" />
+      <CharacterStatus status={character.status} />
+      <CharacterContent {...character} />
+    </>
+  );
+}
+
+interface CharacterStatusProps {
+  status: string;
+}
+
+export function CharacterStatus({status}: CharacterStatusProps){
+    return (
+      <div className={`badge bg-${STATUSES[status]} fs-5`}>
+        {status}
+      </div>
+    );
+}
+
+interface CharacterContentProps {
+  gender: string, 
+  location: Location
+  origin: { name: string },
+  species: string
+}
+
+function CharacterContent({
+  gender,
+  location,
+  origin,
+  species,
+}: CharacterContentProps) {
+  return (
+    <div className="content">
+      <div className="">
+        <span className="fw-bold">Gender : </span>
+        {gender}
+      </div>
+      <div className="">
+        <span className="fw-bold">Location: </span>
+        {location.name}
+      </div>
+      <div className="">
+        <span className="fw-bold">Origin: </span>
+        {origin.name}
+      </div>
+      <div className="">
+        <span className="fw-bold">Species: </span>
+        {species}
+      </div>
+    </div>
+  );
+}
 
 export default CardDetails;

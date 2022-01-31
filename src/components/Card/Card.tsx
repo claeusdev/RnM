@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 import CardDetails from "components/CardDetails";
 import { Character } from "types";
+import { CharacterStatus } from "components/CardDetails/CardDetails";
 
 type CardProps = {
     page: string
@@ -36,33 +37,7 @@ const Card = ({ page, results }: CardProps) => {
               </div>
             </div>
 
-            {(() => {
-              if (status === "Dead") {
-                return (
-                  <div
-                    className={`${styles.badge} position-absolute badge bg-danger`}
-                  >
-                    {status}
-                  </div>
-                );
-              } else if (status === "Alive") {
-                return (
-                  <div
-                    className={`${styles.badge} position-absolute badge bg-success`}
-                  >
-                    {status}
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    className={`${styles.badge} position-absolute badge bg-secondary`}
-                  >
-                    {status}
-                  </div>
-                );
-              }
-            })()}
+            <CharacterStatus status={status} />
           </Link>
         );
       });

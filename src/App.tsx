@@ -24,9 +24,6 @@ function App() {
 
 const Home = () => {
   let [pageNumber, updatePageNumber] = useState(1);
-  let [status, updateStatus] = useState("");
-  let [gender, updateGender] = useState("");
-  let [species, updateSpecies] = useState("");
   let [characters, setCharacters] = useState<Character[]>([]);
   let [info, setInfo] = useState<{}>();
 
@@ -38,32 +35,20 @@ const Home = () => {
       setInfo(info)
     })();
   }, []);
+  
   return (
     <div className="App">
       <h1 className="text-center mb-3">Characters</h1>
       {/* <Search setSearch={setSearch} updatePageNumber={updatePageNumber} /> */}
       <div className="container">
         <div className="row">
-          {/* <Filter
-            pageNumber={pageNumber}
-            status={status}
-            updateStatus={updateStatus}
-            updateGender={updateGender}
-            updateSpecies={updateSpecies}
-            updatePageNumber={updatePageNumber}
-          /> */}
-          <div className="col-lg-8 col-12">
+          <div className="col-lg-8 col-12 justify-content-center">
             <div className="row">
               <Card page="/character/" results={characters} />
             </div>
           </div>
         </div>
       </div>
-      {/* <Pagination
-        info={info}
-        pageNumber={pageNumber}
-        updatePageNumber={updatePageNumber}
-      /> */}
     </div>
   );
 };
