@@ -1,5 +1,6 @@
-import { Character } from "types";
+import { Character, Episode } from 'types';
 
 export interface CharacterProps {
-    character: Character;
-  }
+  character: Character;
+  episodes: Episode[];
+}

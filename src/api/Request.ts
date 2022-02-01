@@ -1,5 +1,5 @@
-import { Character, CharacterResponse } from "types";
-import { BASE_CHARACTER_URL, BASE_URL } from "utils";
+import { Character, CharacterResponse, Episode } from "types";
+import { BASE_CHARACTER_URL, BASE_URL, getEpisodeIds } from "utils";
 
 const Api = () => {
   
@@ -16,9 +16,17 @@ const Api = () => {
      */
     getCharacters: async (url: string = BASE_CHARACTER_URL): Promise<CharacterResponse> => {
       const response = await fetch(url);
-      const data = response.json();
+      const data = await response.json();
       return data
     },
+
+    getEpisodes: async (episodes: string[]): Promise<Episode[]> => {
+      const episodeIds = getEpisodeIds(episodes)
+      const response = await fetch(`${BASE_URL}/episode/${episodeIds}`)
+      const data = await response.json()
+      if(!Array.isArray(data)) return [data]
+      return [...data]
+    }
   };
 };
 

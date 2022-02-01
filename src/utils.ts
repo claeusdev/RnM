@@ -7,3 +7,9 @@ export const STATUSES: {
 
 export const BASE_URL = `https://rickandmortyapi.com/api`;
 export const BASE_CHARACTER_URL = `https://rickandmortyapi.com/api/character`;
+
+export const getEpisodeIds = (urls: string[] = []) => {
+  const ids = urls.map(url => Number(url.split("/episode/")[1]))
+  console.log(ids)
+  return ids
+}

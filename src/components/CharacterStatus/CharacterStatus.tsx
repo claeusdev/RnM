@@ -3,8 +3,6 @@ import { CharacterStatusProps } from "./types";
 
 export default function CharacterStatus({status}: CharacterStatusProps){
     return (
-      <div className={`text-${STATUSES[status]}`}>
-        {status}
-      </div>
+      <div className={`col-auto text-${STATUSES[status]}`}>{status}</div>
     );
 }

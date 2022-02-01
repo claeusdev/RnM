@@ -1,4 +1,3 @@
-import { STATUSES } from "utils";
 import { CharacterContentProps } from "./types";
 
 

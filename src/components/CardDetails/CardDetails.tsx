@@ -2,20 +2,23 @@ import Api from "api";
 import CharacterCard from "components/Card/Card";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Character } from "types";
+import { Character, Episode } from "types";
 
 const CardDetails = () => {
   let { id } = useParams();
 
   let [character, setCharacter] = useState<Character>();
   const [loading, setLoading] = useState<boolean>(false);
+  const [episodes, setEpisodes] = useState<Episode[]>([]);
 
   useEffect(() => {
     (async function () {
       setLoading(true);
       if (id) {
-        let data = await Api().getSingleCharacter(id);
+        const data = await Api().getSingleCharacter(id);
+        const episodes = await Api().getEpisodes(data.episode);
         setCharacter(data);
+        setEpisodes(episodes)
       } else {
         setLoading(true);
       }
@@ -30,7 +33,7 @@ const CardDetails = () => {
         {loading ? (
           <span>loading ...</span>
         ) : (
-          <>{character && <CharacterCard character={character} />}</>
+          <>{character && <CharacterCard character={character} episodes={episodes}/>}</>
         )}
       </div>
     </div>
