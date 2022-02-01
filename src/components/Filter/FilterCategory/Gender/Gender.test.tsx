@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { testCharacter } from "types/testData";
 import GenderFilter from "./Gender";
 
 test("renders Gender Filter", () => {
