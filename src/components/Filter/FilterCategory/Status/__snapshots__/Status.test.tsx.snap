@@ -53,7 +53,7 @@ Object {
                 type="radio"
               />
               <label
-                class="btn btn-outline-primary"
+                class="filterBtn"
                 for="status-0"
               >
                 Alive
@@ -80,7 +80,7 @@ Object {
                 type="radio"
               />
               <label
-                class="btn btn-outline-primary"
+                class="filterBtn"
                 for="status-1"
               >
                 Dead
@@ -107,7 +107,7 @@ Object {
                 type="radio"
               />
               <label
-                class="btn btn-outline-primary"
+                class="filterBtn"
                 for="status-2"
               >
                 Unknown
@@ -167,7 +167,7 @@ Object {
               type="radio"
             />
             <label
-              class="btn btn-outline-primary"
+              class="filterBtn"
               for="status-0"
             >
               Alive
@@ -194,7 +194,7 @@ Object {
               type="radio"
             />
             <label
-              class="btn btn-outline-primary"
+              class="filterBtn"
               for="status-1"
             >
               Dead
@@ -221,7 +221,7 @@ Object {
               type="radio"
             />
             <label
-              class="btn btn-outline-primary"
+              class="filterBtn"
               for="status-2"
             >
               Unknown

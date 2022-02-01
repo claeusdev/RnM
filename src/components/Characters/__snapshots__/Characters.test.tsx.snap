@@ -11,47 +11,49 @@ Object {
         style="text-decoration: none;"
       >
         <div
-          class="card d-flex flex-column justify-content-center"
+          class="card d-flex flex-column"
         >
           <img
-            alt=""
-            class="img img-fluid"
+            alt="Rick Sanchez"
+            class="card-img-top"
             src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
           />
           <div
-            class="content"
+            class="card-body d-flex flex-column"
           >
-            <div
-              class="contentHeading"
+            <h3
+              class="cardTitle"
             >
-              <h4
-                class="characterName"
-              >
-                Rick Sanchez
-              </h4>
-              <div
-                class="col-auto text-success"
-              >
-                Alive
-              </div>
-            </div>
-            <p
-              class="characterSpecies"
+              Rick Sanchez
+            </h3>
+            <div
+              class="text-muted"
             >
               Human
-            </p>
+            </div>
             <div
-              class=""
+              class="d-flex align-items-center pt-2 mt-auto"
             >
-              <div
-                class="text-small"
-              >
-                Last known location:
+              <div>
+                <span
+                  class="text-body"
+                >
+                  Last known location
+                </span>
+                <div
+                  class="text-muted"
+                >
+                  Citadel of Ricks
+                </div>
               </div>
               <div
-                class="lead"
+                class="ms-auto"
               >
-                Citadel of Ricks
+                <div
+                  class="col-auto text-success"
+                >
+                  Alive
+                </div>
               </div>
             </div>
           </div>
@@ -66,47 +68,49 @@ Object {
       style="text-decoration: none;"
     >
       <div
-        class="card d-flex flex-column justify-content-center"
+        class="card d-flex flex-column"
       >
         <img
-          alt=""
-          class="img img-fluid"
+          alt="Rick Sanchez"
+          class="card-img-top"
           src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
         />
         <div
-          class="content"
+          class="card-body d-flex flex-column"
         >
-          <div
-            class="contentHeading"
+          <h3
+            class="cardTitle"
           >
-            <h4
-              class="characterName"
-            >
-              Rick Sanchez
-            </h4>
-            <div
-              class="col-auto text-success"
-            >
-              Alive
-            </div>
-          </div>
-          <p
-            class="characterSpecies"
+            Rick Sanchez
+          </h3>
+          <div
+            class="text-muted"
           >
             Human
-          </p>
+          </div>
           <div
-            class=""
+            class="d-flex align-items-center pt-2 mt-auto"
           >
-            <div
-              class="text-small"
-            >
-              Last known location:
+            <div>
+              <span
+                class="text-body"
+              >
+                Last known location
+              </span>
+              <div
+                class="text-muted"
+              >
+                Citadel of Ricks
+              </div>
             </div>
             <div
-              class="lead"
+              class="ms-auto"
             >
-              Citadel of Ricks
+              <div
+                class="col-auto text-success"
+              >
+                Alive
+              </div>
             </div>
           </div>
         </div>

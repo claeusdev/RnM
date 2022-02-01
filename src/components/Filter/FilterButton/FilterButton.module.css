@@ -1,0 +1,20 @@
+.filterBtn {
+    position: relative;
+    display: block;
+    min-width: calc(1.4285714286em + 0.875rem + 2px);
+    margin: 0;
+    padding: 0.4375rem 0.75rem;
+    font-size: .875rem;
+    line-height: 1.4285714286;
+    color: #626976;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #d9dbde;
+    border-radius: 3px;
+    transition: border-color .3s,background .3s,color .3s;
+  }

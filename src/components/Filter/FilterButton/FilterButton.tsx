@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from './FilterButton.module.css';
 
 interface FilterButtonProps {
   input: string;
@@ -41,7 +41,7 @@ const FilterButton = ({
             task(input);
             updatePageNumber(1);
           }}
-          className="btn btn-outline-primary"
+          className={styles.filterBtn}
           htmlFor={`${name}-${index}`}
         >
           {input}
