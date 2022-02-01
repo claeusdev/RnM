@@ -1,11 +1,11 @@
 import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import { testCharacter } from "types/testData";
-import Characters from "./Characters";
+import Details from "./CardDetails";
 
-test("renders lists of characters", () => {
+
+test("renders Character details", () => {
   const component = render(<BrowserRouter>
-    <Characters page="/character/" results={[testCharacter]}/>
+    <Details  />
   </BrowserRouter>);
   expect(component).toMatchSnapshot();
 });

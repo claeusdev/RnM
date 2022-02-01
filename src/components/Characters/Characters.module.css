@@ -1,20 +1,37 @@
 :root {
   --radius: 10px;
+  ---light-grey: #fff;
 }
 
-
-
 .card {
-  border: 2px solid #0b5ed7;
-  border-radius: var(--radius);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  border-radius: 4px;
+  box-shadow: rgb(30 41 59 / 4%) 0 2px 4px 0;
+  border: 1px solid rgba(98,105,118,.16);
+  background: var(---light-grey);
+  transition: transform .3s ease-out,opacity .3s ease-out,box-shadow .3s ease-out;
 }
 
 .content {
   padding: 10px;
 }
 
-.img {
-  border-radius: var(--radius) var(--radius) 0 0;
+.contentHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.characterName {
+  font-size: large;
+}
+
+.characterSpecies {
+  margin-bottom: 2px;
 }
 
 .badge {

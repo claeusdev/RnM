@@ -15,7 +15,6 @@ const Api = () => {
      * @returns Promise
      */
     getCharacters: async (url: string = BASE_CHARACTER_URL): Promise<CharacterResponse> => {
-      console.log("RES", url)
       const response = await fetch(url);
       const data = response.json();
       return data

@@ -23,16 +23,11 @@ function App() {
   );
 }
 
-interface PageProps extends Info{
-  currentUrl: string;
-}
-
 const Home = () => {
   let [characters, setCharacters] = useState<Character[]>([]);
   let [info, setInfo] = useState<Info>();
   const [page, setPage] = useState<string | undefined>(BASE_CHARACTER_URL);
   useEffect(() => {
-
     (async function () {
       let data = await Api().getCharacters(page);
       const { info, results } = data;
@@ -47,11 +42,12 @@ const Home = () => {
 
   return (
     <div className="App">
-      <h1 className="text-center mb-3">Characters</h1>
+      <h1 className="text-center mb-3" data-testid="site-header">Characters</h1>
       {/* <Search setSearch={setSearch} updatePageNumber={updatePageNumber} /> */}
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 col-12 justify-content-center">
+          <div className="col-lg-3"></div>
+          <div className="col-lg-9 col-12 justify-content-center">
             <div className="row">
               {characters.length > 0 ? <Characters page="/character/" results={characters} /> : <span>No characters found</span>}
             </div>
