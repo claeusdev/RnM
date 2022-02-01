@@ -7,6 +7,7 @@ import Navbar from 'components/Navbar';
 import Home from 'pages/Home';
 
 import styles from './App.module.css';
+import ErrorBoundary from 'components/ErrorBoundary';
 
 function App() {
   return (
@@ -14,10 +15,12 @@ function App() {
       <div className={styles.App}>
         <Navbar />
       </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/character/:id" element={<CardDetails />} />
-      </Routes>
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/character/:id" element={<CardDetails />} />
+        </Routes>
+      </ErrorBoundary>
     </Router>
   );
 }
