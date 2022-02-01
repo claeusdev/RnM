@@ -5,127 +5,377 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <h1
-        class="text-center"
-      >
-        Rick Sanchez
-      </h1>
-      <img
-        alt=""
-        class="img-fluid"
-        src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-      />
       <div
-        class="text-success"
+        class="page-header"
       >
-        Alive
+        <div
+          class="row align-items-center"
+        >
+          <div
+            class="col-auto"
+          >
+            <span
+              class="avatar"
+              style="background-image: url(https://rickandmortyapi.com/api/character/avatar/1.jpeg);"
+            />
+          </div>
+          <div
+            class="col"
+          >
+            <h2
+              class="page-title"
+            >
+              Rick Sanchez
+            </h2>
+            <div
+              class="page-subtitle"
+            >
+              <div
+                class="row"
+              >
+                <div
+                  class="col-auto text-success"
+                >
+                  Alive
+                </div>
+                <div
+                  class="col-auto"
+                >
+                  <span
+                    class="text-reset"
+                  >
+                    Human
+                  </span>
+                </div>
+                <div
+                  class="col-auto"
+                >
+                  <svg
+                    class="icon icon-tabler icon-tabler-man"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                      stroke="none"
+                    />
+                    <circle
+                      cx="12"
+                      cy="5"
+                      r="2"
+                    />
+                    <path
+                      d="M10 22v-5l-1 -1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5"
+                    />
+                  </svg>
+                  <span
+                    class="text-reset"
+                  >
+                    Male
+                  </span>
+                </div>
+                <div
+                  class="col-auto"
+                >
+                  <svg
+                    class="icon"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                      stroke="none"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="8"
+                    />
+                    <line
+                      x1="12"
+                      x2="12"
+                      y1="2"
+                      y2="4"
+                    />
+                    <line
+                      x1="12"
+                      x2="12"
+                      y1="20"
+                      y2="22"
+                    />
+                    <line
+                      x1="20"
+                      x2="22"
+                      y1="12"
+                      y2="12"
+                    />
+                    <line
+                      x1="2"
+                      x2="4"
+                      y1="12"
+                      y2="12"
+                    />
+                  </svg>
+                  <span
+                    class="text-reset"
+                  >
+                    Citadel of Ricks
+                  </span>
+                </div>
+                <div
+                  class="col-auto"
+                >
+                  <svg
+                    class="icon"
+                    fill="none"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                      stroke="none"
+                    />
+                    <circle
+                      cx="12"
+                      cy="11"
+                      r="3"
+                    />
+                    <path
+                      d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+                    />
+                  </svg>
+                  <span
+                    class="text-reset"
+                  >
+                    Earth (C-137)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div
-        class="content"
+        class="hr"
       >
-        <div
-          class=""
-        >
-          <span
-            class="fw-bold"
-          >
-            Gender : 
-          </span>
-          Male
-        </div>
-        <div
-          class=""
-        >
-          <span
-            class="fw-bold"
-          >
-            Location: 
-          </span>
-          Citadel of Ricks
-        </div>
-        <div
-          class=""
-        >
-          <span
-            class="fw-bold"
-          >
-            Origin: 
-          </span>
-          Earth (C-137)
-        </div>
-        <div
-          class=""
-        >
-          <span
-            class="fw-bold"
-          >
-            Species: 
-          </span>
-          Human
-        </div>
+        Episodes
       </div>
+      <ul />
     </div>
   </body>,
   "container": <div>
-    <h1
-      class="text-center"
-    >
-      Rick Sanchez
-    </h1>
-    <img
-      alt=""
-      class="img-fluid"
-      src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-    />
     <div
-      class="text-success"
+      class="page-header"
     >
-      Alive
+      <div
+        class="row align-items-center"
+      >
+        <div
+          class="col-auto"
+        >
+          <span
+            class="avatar"
+            style="background-image: url(https://rickandmortyapi.com/api/character/avatar/1.jpeg);"
+          />
+        </div>
+        <div
+          class="col"
+        >
+          <h2
+            class="page-title"
+          >
+            Rick Sanchez
+          </h2>
+          <div
+            class="page-subtitle"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="col-auto text-success"
+              >
+                Alive
+              </div>
+              <div
+                class="col-auto"
+              >
+                <span
+                  class="text-reset"
+                >
+                  Human
+                </span>
+              </div>
+              <div
+                class="col-auto"
+              >
+                <svg
+                  class="icon icon-tabler icon-tabler-man"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                    stroke="none"
+                  />
+                  <circle
+                    cx="12"
+                    cy="5"
+                    r="2"
+                  />
+                  <path
+                    d="M10 22v-5l-1 -1v-4a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4l-1 1v5"
+                  />
+                </svg>
+                <span
+                  class="text-reset"
+                >
+                  Male
+                </span>
+              </div>
+              <div
+                class="col-auto"
+              >
+                <svg
+                  class="icon"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                    stroke="none"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="8"
+                  />
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="2"
+                    y2="4"
+                  />
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="20"
+                    y2="22"
+                  />
+                  <line
+                    x1="20"
+                    x2="22"
+                    y1="12"
+                    y2="12"
+                  />
+                  <line
+                    x1="2"
+                    x2="4"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
+                <span
+                  class="text-reset"
+                >
+                  Citadel of Ricks
+                </span>
+              </div>
+              <div
+                class="col-auto"
+              >
+                <svg
+                  class="icon"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                    stroke="none"
+                  />
+                  <circle
+                    cx="12"
+                    cy="11"
+                    r="3"
+                  />
+                  <path
+                    d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+                  />
+                </svg>
+                <span
+                  class="text-reset"
+                >
+                  Earth (C-137)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div
-      class="content"
+      class="hr"
     >
-      <div
-        class=""
-      >
-        <span
-          class="fw-bold"
-        >
-          Gender : 
-        </span>
-        Male
-      </div>
-      <div
-        class=""
-      >
-        <span
-          class="fw-bold"
-        >
-          Location: 
-        </span>
-        Citadel of Ricks
-      </div>
-      <div
-        class=""
-      >
-        <span
-          class="fw-bold"
-        >
-          Origin: 
-        </span>
-        Earth (C-137)
-      </div>
-      <div
-        class=""
-      >
-        <span
-          class="fw-bold"
-        >
-          Species: 
-        </span>
-        Human
-      </div>
+      Episodes
     </div>
+    <ul />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
