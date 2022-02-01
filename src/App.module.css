@@ -1,6 +1,3 @@
-.btnPill {
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-  border-radius: 10rem;
-  border-color: #e6e7e9;
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

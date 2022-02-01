@@ -1,3 +1,5 @@
+import { Character } from "types";
+
 export const STATUSES: {
     [key: string]: string
   } = {
@@ -12,4 +14,8 @@ export const getEpisodeIds = (urls: string[] = []) => {
   const ids = urls.map(url => Number(url.split("/episode/")[1]))
   console.log(ids)
   return ids
+}
+
+export const isEmpty = (list: number[] | string[] | Character[]): boolean => {
+  return list.length > 0;
 }

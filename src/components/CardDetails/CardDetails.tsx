@@ -1,5 +1,6 @@
 import Api from "api";
 import CharacterCard from "components/Card/Card";
+import Spinner from "components/Spinner";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Character, Episode } from "types";
@@ -31,7 +32,7 @@ const CardDetails = () => {
       <div className="d-flex flex-column gap-3">
         <Link to="/">Back to all characters</Link>
         {loading ? (
-          <span>loading ...</span>
+          <Spinner />
         ) : (
           <>{character && <CharacterCard character={character} episodes={episodes}/>}</>
         )}
