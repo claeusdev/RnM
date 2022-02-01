@@ -1,19 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Card from "components/Card";
-// import Navbar from "./components/Navbar";
+import Characters from "components/Characters";
 
 import CardDetails from "components/CardDetails";
 import Api from "api";
-import { Character } from "types";
+import { Character, Info } from "types";
+import { BASE_CHARACTER_URL } from "utils";
+import Navbar from "components/Navbar";
 
 function App() {
   return (
     <Router>
-      <div className="App">{/* <Navbar /> */}</div>
+      <div className="App"><Navbar /></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/character/:id" element={<CardDetails />} />
@@ -23,29 +24,34 @@ function App() {
 }
 
 const Home = () => {
-  let [pageNumber, updatePageNumber] = useState(1);
   let [characters, setCharacters] = useState<Character[]>([]);
-  let [info, setInfo] = useState<{}>();
-
+  let [info, setInfo] = useState<Info>();
+  const [page, setPage] = useState<string | undefined>(BASE_CHARACTER_URL);
   useEffect(() => {
     (async function () {
-      let data = await Api().getCharacters();
+      let data = await Api().getCharacters(page);
       const { info, results } = data;
-      setCharacters(results)
+      setCharacters(prevState => [...prevState, ...results])
       setInfo(info)
     })();
-  }, []);
-  
+  }, [page]);
+
+  function handleLoadMore(){
+   setPage(info?.next)
+  }
+
   return (
     <div className="App">
-      <h1 className="text-center mb-3">Characters</h1>
+      <h1 className="text-center mb-3" data-testid="site-header">Characters</h1>
       {/* <Search setSearch={setSearch} updatePageNumber={updatePageNumber} /> */}
       <div className="container">
         <div className="row">
-          <div className="col-lg-8 col-12 justify-content-center">
+          <div className="col-lg-3"></div>
+          <div className="col-lg-9 col-12 justify-content-center">
             <div className="row">
-              <Card page="/character/" results={characters} />
+              {characters.length > 0 ? <Characters page="/character/" results={characters} /> : <span>No characters found</span>}
             </div>
+            <button onClick={handleLoadMore}>Load More</button>
           </div>
         </div>
       </div>

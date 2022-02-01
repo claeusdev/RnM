@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
-import Card from "./Card";
 import { testCharacter } from "types/testData";
+import CharacterStatus from "./CharacterStatus";
 
 test("renders learn react link", () => {
-  const component = render(<Card character={testCharacter} />);
+  const component = render(<CharacterStatus {...testCharacter} />);
   expect(component).toMatchSnapshot();
 });
