@@ -8,10 +8,13 @@ import Home from 'pages/Home';
 
 import styles from './App.module.css';
 import ErrorBoundary from 'components/ErrorBoundary';
+import { Provider } from 'react-redux';
+import { store } from 'store';
 
 function App() {
   return (
-    <Router>
+    <Provider store={store}>
+      <Router>
       <div className={styles.App}>
         <Navbar />
       </div>
@@ -22,6 +25,8 @@ function App() {
         </Routes>
       </ErrorBoundary>
     </Router>
+    </Provider>
+    
   );
 }
 

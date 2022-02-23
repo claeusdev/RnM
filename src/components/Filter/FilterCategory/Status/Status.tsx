@@ -6,7 +6,7 @@ export interface FilterStatusProps extends FilterProps {
     updateStatus: (status: string) => void;
 }
 
-const Status = ({ updateStatus, updatePageNumber }: FilterStatusProps) => {
+const Status: React.FC<FilterStatusProps> = ({ updateStatus, updatePageNumber }) => {
   let status = ['Alive', 'Dead', 'Unknown'];
   return (
     <div className="accordion-item">

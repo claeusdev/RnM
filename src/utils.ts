@@ -25,6 +25,6 @@ export const getEpisodeIds = (urls: string[] = []): number[] => {
  * @returns boolean
  */
 
-export const isEmpty = (list: number[] | string[] | Character[]): boolean => {
+export const isEmpty = (list: number[] | string[] | Character[] = []): boolean => {
   return list.length > 0;
 };

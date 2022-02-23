@@ -5,7 +5,7 @@ export interface FilterGenderProps extends FilterProps {
   updateGender: (gender: string) => void;
 }
 
-const Gender = ({ updateGender, updatePageNumber }: FilterGenderProps) => {
+const Gender: React.FC<FilterGenderProps> = ({ updateGender, updatePageNumber }) => {
   let genders = ['female', 'male', 'genderless', 'unknown'];
   return (
     <div className="accordion-item">

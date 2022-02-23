@@ -8,13 +8,13 @@ interface FilterButtonProps {
   name: string;
 }
 
-const FilterButton = ({
+const FilterButton: React.FC<FilterButtonProps> = ({
   input,
   task,
   updatePageNumber,
   index,
   name,
-}: FilterButtonProps) => {
+}) => {
   return (
     <>
       <style>

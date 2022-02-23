@@ -5,7 +5,7 @@ export interface FilterSpeciesProps extends FilterProps {
   updateSpecies: (species: string) => void;
 }
 
-const Species = ({ updateSpecies, updatePageNumber }: FilterSpeciesProps) => {
+const Species: React.FC<FilterSpeciesProps> = ({ updateSpecies, updatePageNumber }: FilterSpeciesProps) => {
   let species = [
     'Human',
     'Alien',

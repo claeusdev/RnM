@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Characters.module.css';
 import { CharactersProps } from './types';
 
-const Characters = ({ page, results }: CharactersProps) => {
+const Characters: React.FC<CharactersProps> = ({ page, results }) => {
   let content = results.map(
     ({ id, image, name, status, location, species }) => (
       <Link
