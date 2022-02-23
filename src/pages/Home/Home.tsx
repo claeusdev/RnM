@@ -71,7 +71,6 @@ const Home: React.FC = () => {
       )}
     </>
   );
-  
 
   return (
     <Provider store={store}>
@@ -101,7 +100,18 @@ const Home: React.FC = () => {
 };
 
 function NoCharacterFound() {
-  return <span>No characters found</span>;
+  return (
+    <span
+      style={{
+        display: 'flex',
+        minHeight: '50vh',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      No characters found
+    </span>
+  );
 }
 
 export default Home;
