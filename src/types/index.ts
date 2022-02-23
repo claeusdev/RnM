@@ -1,3 +1,12 @@
+export interface State {
+  characters: Character[],
+  loading: boolean;
+  error: string | null;
+}
+export interface Action {
+  type: string;
+  payload?: CharacterResponse | string;
+}
 export interface Character {
   id: number;
   name: string;
@@ -11,6 +20,12 @@ export interface Character {
   url: string;
 }
 
+export type GetCharacterParams = {
+  status?: string;
+  species?: string;
+  pageNumber?: number,
+  gender?: string;
+}
 export interface Location {
   name: string;
   url: string;

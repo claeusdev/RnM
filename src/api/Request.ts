@@ -1,12 +1,7 @@
-import { Character, CharacterResponse, Episode } from 'types';
+import { Character, CharacterResponse, Episode, GetCharacterParams } from 'types';
 import { BASE_CHARACTER_URL, BASE_URL, getEpisodeIds } from 'utils';
 
-type GetCharacterParams = {
-  status?: string;
-  species?: string;
-  pageNumber?: number,
-  gender?: string;
-}
+
 
 const Api = () => {
   return {
@@ -18,7 +13,6 @@ const Api = () => {
       const data = response.json();
       return data;
     },
-    
     /**
      * @param  {GetCharacterParams} params
      */
