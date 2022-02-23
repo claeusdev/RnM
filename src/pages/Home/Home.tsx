@@ -12,7 +12,7 @@ import { store } from 'store';
 import { useActions } from 'hooks/useActions';
 import { useTypedSelector } from 'hooks/useSelector';
 
-const Home = () => {
+const Home: React.FC = () => {
   let [pageNumber, setPageNumber] = useState(1);
   let [status, setStatus] = useState('');
   let [gender, setGender] = useState('');
@@ -51,22 +51,27 @@ const Home = () => {
     </>
   );
 
-  const Pagination =  <>{info?.prev && (
-    <button
-      className={`btn ${styles.btnPill}`}
-      onClick={() => handleLoadMore(-1)}
-    >
-      Prev
-    </button>
-  )}</>
-  {info?.next && (
-    <button
-      className={`btn ${styles.btnPill}`}
-      onClick={() => handleLoadMore(1)}
-    >
-      Next
-    </button>
-  )}
+  const Pagination = (
+    <>
+      {info?.prev && (
+        <button
+          className={`btn ${styles.btnPill}`}
+          onClick={() => handleLoadMore(-1)}
+        >
+          Prev
+        </button>
+      )}
+      {info?.next && (
+        <button
+          className={`btn ${styles.btnPill}`}
+          onClick={() => handleLoadMore(1)}
+        >
+          Next
+        </button>
+      )}
+    </>
+  );
+  
 
   return (
     <Provider store={store}>
@@ -86,9 +91,7 @@ const Home = () => {
             />
             <div className="col-lg-9 col-12 justify-content-center">
               <div className="row">{Content}</div>
-              <div className="d-flex justify-content-center">
-                {Pagination}
-              </div>
+              <div className="d-flex justify-content-center">{Pagination}</div>
             </div>
           </div>
         </div>

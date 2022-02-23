@@ -11,13 +11,12 @@ interface FilterComponentProps extends FilterProps {
     status: string
 }
 
-const Filter = ({
-  pageNumber,
+const Filter: React.FC<FilterComponentProps> = ({
   updatePageNumber,
   updateStatus,
   updateGender,
   updateSpecies,
-}: FilterComponentProps) => {
+}) => {
   let clear = () => {
     updateStatus("");
     updateGender("");

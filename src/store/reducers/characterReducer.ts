@@ -11,6 +11,7 @@ const initialState = {
       results: []
   },
   character: null,
+  episodes: []
 };
 
 const reducer = (state: State = initialState, action: Action): State => {
@@ -31,7 +32,7 @@ const reducer = (state: State = initialState, action: Action): State => {
         error: action.payload,
       };
     case ActionTypes.LOAD_CHARACTER:
-      return { ...state, loading: true, error: null, character: null };
+      return { ...state, loading: true, error: null };
     case ActionTypes.LOAD_CHARACTER_SUCCESS:
       return {
         ...state,
@@ -44,7 +45,12 @@ const reducer = (state: State = initialState, action: Action): State => {
         ...state,
         loading: false,
         error: action.payload,
-        character: null,
+      };
+    case ActionTypes.SET_EPISODES:
+      return {
+        ...state,
+        loading: false,
+        episodes: action.payload
       };
     // case ActionTypes.FILTER_CHARACTERS:
     //   return { ...state, loading: true, error: null, characters: [] };
@@ -65,6 +71,7 @@ const reducer = (state: State = initialState, action: Action): State => {
     default:
       return state;
   }
+
 };
 
 export default reducer;

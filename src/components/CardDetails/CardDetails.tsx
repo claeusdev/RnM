@@ -1,29 +1,25 @@
-import Api from 'api';
 import CharacterCard from 'components/Card/Card';
 import Spinner from 'components/Spinner';
 import { useActions } from 'hooks/useActions';
 import { useTypedSelector } from 'hooks/useSelector';
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Episode } from 'types';
+import { store } from 'store';
 
-const CardDetails = () => {
+const CardDetails: React.FC = () => {
   let { id } = useParams();
-  const { fetchCharacter } = useActions()
-  const character = null,
-  episodes: Episode[] = [], loading = false
-  // const { character, error, loading, episodes } = useTypedSelector(
-  //   (state: any) => state.character
-  // );
+  const { fetchCharacter } = useActions();
+
+  const { character, loading, episodes } = useTypedSelector(
+    (state: any) => state.characters
+  );
   useEffect(() => {
     (async function () {
       if (id) {
-        console.log("load")
         fetchCharacter(id);
       }
     })();
   }, [id]);
-  console.log(id)
 
   return (
     <div className="container d-flex justify-content-center mb-5">

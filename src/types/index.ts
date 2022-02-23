@@ -5,6 +5,7 @@ export interface State {
   loading: boolean;
   error: string | null;
   character: Character | null;
+  episodes: Episode[]
 }
 
 export type Action =
@@ -13,8 +14,13 @@ export type Action =
   | FetchCharacterSuccessAction
   | FetchCharactersAction
   | FetchCharactersSuccessAction
-  | FetchCharactersErrorAction;
+  | FetchCharactersErrorAction
+  | SetEpisodesAction
 
+export interface SetEpisodesAction {
+  type: ActionTypes.SET_EPISODES,
+  payload: Episode[]
+}
 export interface FetchCharactersAction {
   type: ActionTypes.LOAD_CHARACTERS;
 }

@@ -1,5 +1,6 @@
 import Api from 'api';
 import { Dispatch } from 'react';
+import { store } from 'store';
 import { Action, GetCharacterParams } from 'types';
 import { ActionTypes } from '../types';
 
@@ -42,10 +43,18 @@ export const fetchCharacter = (id: string) => {
 
     try {
       const data = await Api().getSingleCharacter(id);
+      const episodes = await Api().getEpisodes(data.episode)
+
       dispatch({
         type: ActionTypes.LOAD_CHARACTER_SUCCESS,
         payload: data,
       });
+
+      dispatch({
+        type: ActionTypes.SET_EPISODES,
+        payload: episodes,
+      });
+
     } catch (error: any) {
       dispatch({
         type: ActionTypes.LOAD_CHARACTER_ERROR,
