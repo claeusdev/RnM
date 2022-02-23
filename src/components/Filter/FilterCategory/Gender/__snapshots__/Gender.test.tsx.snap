@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders character location/status 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="accordion-item"
+      >
+        <h2
+          class="accordion-header"
+          id="headingThree"
+        >
+          <button
+            aria-controls="collapseThree"
+            aria-expanded="false"
+            class="accordion-button collapsed"
+            data-bs-target="#collapseThree"
+            data-bs-toggle="collapse"
+            type="button"
+          >
+            Gender
+          </button>
+        </h2>
+        <div
+          aria-labelledby="headingThree"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+          id="collapseThree"
+        >
+          <div
+            class="accordion-body d-flex flex-wrap gap-3"
+          >
+            <style>
+              
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+            </style>
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input x"
+                id="gender-0"
+                name="gender"
+                type="radio"
+              />
+              <label
+                class="btn btn-outline-primary"
+                for="gender-0"
+              >
+                female
+              </label>
+            </div>
+            <style>
+              
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+            </style>
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input x"
+                id="gender-1"
+                name="gender"
+                type="radio"
+              />
+              <label
+                class="btn btn-outline-primary"
+                for="gender-1"
+              >
+                male
+              </label>
+            </div>
+            <style>
+              
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+            </style>
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input x"
+                id="gender-2"
+                name="gender"
+                type="radio"
+              />
+              <label
+                class="btn btn-outline-primary"
+                for="gender-2"
+              >
+                genderless
+              </label>
+            </div>
+            <style>
+              
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+            </style>
+            <div
+              class="form-check"
+            >
+              <input
+                class="form-check-input x"
+                id="gender-3"
+                name="gender"
+                type="radio"
+              />
+              <label
+                class="btn btn-outline-primary"
+                for="gender-3"
+              >
+                unknown
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="accordion-item"
+    >
+      <h2
+        class="accordion-header"
+        id="headingThree"
+      >
+        <button
+          aria-controls="collapseThree"
+          aria-expanded="false"
+          class="accordion-button collapsed"
+          data-bs-target="#collapseThree"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          Gender
+        </button>
+      </h2>
+      <div
+        aria-labelledby="headingThree"
+        class="accordion-collapse collapse"
+        data-bs-parent="#accordionExample"
+        id="collapseThree"
+      >
+        <div
+          class="accordion-body d-flex flex-wrap gap-3"
+        >
+          <style>
+            
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+          </style>
+          <div
+            class="form-check"
+          >
+            <input
+              class="form-check-input x"
+              id="gender-0"
+              name="gender"
+              type="radio"
+            />
+            <label
+              class="btn btn-outline-primary"
+              for="gender-0"
+            >
+              female
+            </label>
+          </div>
+          <style>
+            
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+          </style>
+          <div
+            class="form-check"
+          >
+            <input
+              class="form-check-input x"
+              id="gender-1"
+              name="gender"
+              type="radio"
+            />
+            <label
+              class="btn btn-outline-primary"
+              for="gender-1"
+            >
+              male
+            </label>
+          </div>
+          <style>
+            
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+          </style>
+          <div
+            class="form-check"
+          >
+            <input
+              class="form-check-input x"
+              id="gender-2"
+              name="gender"
+              type="radio"
+            />
+            <label
+              class="btn btn-outline-primary"
+              for="gender-2"
+            >
+              genderless
+            </label>
+          </div>
+          <style>
+            
+          .x:checked + label {
+            background-color: #0b5ed7;
+            color: white;
+          }
+          input[type="radio"] {
+            display: none;
+          }
+        
+          </style>
+          <div
+            class="form-check"
+          >
+            <input
+              class="form-check-input x"
+              id="gender-3"
+              name="gender"
+              type="radio"
+            />
+            <label
+              class="btn btn-outline-primary"
+              for="gender-3"
+            >
+              unknown
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
