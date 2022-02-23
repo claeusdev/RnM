@@ -19,7 +19,7 @@ const Home = () => {
   let [species, setSpecies] = useState('');
 
   const { fetchCharacters } = useActions();
-  const { characters, error, loading } = useTypedSelector(
+  const { characters, loading } = useTypedSelector(
     (state: any) => state.characters
   );
   useEffect(() => {
@@ -39,11 +39,35 @@ const Home = () => {
 
   const { info, results } = characters;
 
-  console.log('CHARS', { characters, error, loading });
+  const Content = loading ? (
+    <Spinner />
+  ) : (
+    <>
+      {isEmpty(results) ? (
+        <Characters page="/character/" results={results} />
+      ) : (
+        <NoCharacterFound />
+      )}
+    </>
+  );
 
-  if (loading) {
-    return <Spinner />;
-  }
+  const Pagination =  <>{info?.prev && (
+    <button
+      className={`btn ${styles.btnPill}`}
+      onClick={() => handleLoadMore(-1)}
+    >
+      Prev
+    </button>
+  )}</>
+  {info?.next && (
+    <button
+      className={`btn ${styles.btnPill}`}
+      onClick={() => handleLoadMore(1)}
+    >
+      Next
+    </button>
+  )}
+
   return (
     <Provider store={store}>
       <div className="App">
@@ -61,30 +85,9 @@ const Home = () => {
               updatePageNumber={setPageNumber}
             />
             <div className="col-lg-9 col-12 justify-content-center">
-              <div className="row">
-                {isEmpty(results) ? (
-                  <Characters page="/character/" results={results} />
-                ) : (
-                  <NoCharacterFound />
-                )}
-              </div>
+              <div className="row">{Content}</div>
               <div className="d-flex justify-content-center">
-                {info?.prev && (
-                  <button
-                    className={`btn ${styles.btnPill}`}
-                    onClick={() => handleLoadMore(-1)}
-                  >
-                    Prev
-                  </button>
-                )}
-                {info?.next && (
-                  <button
-                    className={`btn ${styles.btnPill}`}
-                    onClick={() => handleLoadMore(1)}
-                  >
-                    Next
-                  </button>
-                )}
+                {Pagination}
               </div>
             </div>
           </div>

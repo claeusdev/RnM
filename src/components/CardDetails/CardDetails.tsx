@@ -1,31 +1,29 @@
-import Api from "api";
-import CharacterCard from "components/Card/Card";
-import Spinner from "components/Spinner";
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { Character, Episode } from "types";
+import Api from 'api';
+import CharacterCard from 'components/Card/Card';
+import Spinner from 'components/Spinner';
+import { useActions } from 'hooks/useActions';
+import { useTypedSelector } from 'hooks/useSelector';
+import { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Episode } from 'types';
 
 const CardDetails = () => {
   let { id } = useParams();
-
-  let [character, setCharacter] = useState<Character>();
-  const [loading, setLoading] = useState<boolean>(false);
-  const [episodes, setEpisodes] = useState<Episode[]>([]);
-
+  const { fetchCharacter } = useActions()
+  const character = null,
+  episodes: Episode[] = [], loading = false
+  // const { character, error, loading, episodes } = useTypedSelector(
+  //   (state: any) => state.character
+  // );
   useEffect(() => {
     (async function () {
-      setLoading(true);
       if (id) {
-        const data = await Api().getSingleCharacter(id);
-        const episodes = await Api().getEpisodes(data.episode);
-        setCharacter(data);
-        setEpisodes(episodes)
-      } else {
-        setLoading(true);
+        console.log("load")
+        fetchCharacter(id);
       }
-      setLoading(false);
     })();
   }, [id]);
+  console.log(id)
 
   return (
     <div className="container d-flex justify-content-center mb-5">
@@ -34,7 +32,11 @@ const CardDetails = () => {
         {loading ? (
           <Spinner />
         ) : (
-          <>{character && <CharacterCard character={character} episodes={episodes}/>}</>
+          <>
+            {character && (
+              <CharacterCard character={character} episodes={episodes} />
+            )}
+          </>
         )}
       </div>
     </div>

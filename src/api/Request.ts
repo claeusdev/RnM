@@ -1,4 +1,4 @@
-import { Character, CharacterResponse, Episode, GetCharacterParams } from 'types';
+import { Character, CharactersResponse, Episode, GetCharacterParams } from 'types';
 import { BASE_CHARACTER_URL, BASE_URL, getEpisodeIds } from 'utils';
 
 
@@ -16,7 +16,7 @@ const Api = () => {
     /**
      * @param  {GetCharacterParams} params
      */
-    getCharacters: async ({status, species, pageNumber, gender}: GetCharacterParams): Promise<CharacterResponse> => {
+    getCharacters: async ({status, species, pageNumber, gender}: GetCharacterParams): Promise<CharactersResponse> => {
       const response = await fetch(
         `${BASE_CHARACTER_URL}/?page=${pageNumber}&status=${status}&gender=${gender}&species=${species}`
       );
@@ -36,7 +36,7 @@ const Api = () => {
     /**
      * @param  {string} term
      */
-    searchCharacters: async (term: string): Promise<CharacterResponse> => {
+    searchCharacters: async (term: string): Promise<CharactersResponse> => {
       const response = await fetch(`${BASE_CHARACTER_URL}/?name=${term}`);
       const data = await response.json();
       return data;
