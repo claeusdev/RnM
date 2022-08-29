@@ -1,29 +1,23 @@
-import Api from "api";
-import CharacterCard from "components/Card/Card";
-import Spinner from "components/Spinner";
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { Character, Episode } from "types";
+import CharacterCard from 'components/Card/Card';
+import Spinner from 'components/Spinner';
+import { useActions } from 'hooks/useActions';
+import { useTypedSelector } from 'hooks/useSelector';
+import { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { store } from 'store';
 
-const CardDetails = () => {
+const CardDetails: React.FC = () => {
   let { id } = useParams();
+  const { fetchCharacter } = useActions();
 
-  let [character, setCharacter] = useState<Character>();
-  const [loading, setLoading] = useState<boolean>(false);
-  const [episodes, setEpisodes] = useState<Episode[]>([]);
-
+  const { character, loading, episodes } = useTypedSelector(
+    (state: any) => state.characters
+  );
   useEffect(() => {
     (async function () {
-      setLoading(true);
       if (id) {
-        const data = await Api().getSingleCharacter(id);
-        const episodes = await Api().getEpisodes(data.episode);
-        setCharacter(data);
-        setEpisodes(episodes)
-      } else {
-        setLoading(true);
+        fetchCharacter(id);
       }
-      setLoading(false);
     })();
   }, [id]);
 
@@ -34,7 +28,11 @@ const CardDetails = () => {
         {loading ? (
           <Spinner />
         ) : (
-          <>{character && <CharacterCard character={character} episodes={episodes}/>}</>
+          <>
+            {character && (
+              <CharacterCard character={character} episodes={episodes} />
+            )}
+          </>
         )}
       </div>
     </div>
